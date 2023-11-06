@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+@import '../commonStyles/commonStyles.scss';
+
+$section-border: 1px solid #e2e5ec;
+$main-font-family: "PT Sans", sans-serif;
+
+@mixin around {
+  content: "";
+  position: absolute;
+  background-color: #e2e5ec;
+}
+.container {
+  position: relative;
+  margin: 0 auto;
+	top: 50%;
+  max-width: 1440px;
+  width: 100%;
+	min-height: 1080px;
+  height: 100%;
+	font-family: $main-font-family;
+  font-weight: 400;
+  font-size: 20px;
+  border-left: $section-border;
+  border-right: $section-border;
+  color: $primary-color;
+  &::before {
+    @include around;
+    top: 480px;
+    min-width: 100%;
+    height: 2px;
+  }
+  &::after {
+    @include around;
+    top: 0px;
+    width: 2px;
+    left: 720px;
+    height: 100%;
+  }
+	@media (max-width: 768px) {
+		padding: 2rem;
+		max-height: 100%;
+	}
+	@media (max-width: 580px) {
+		padding: 0;
+	}
+  .section_title {
+    position: absolute;
+    top: 170px;
+    border: none;
+    border-left: 5px solid;
+    border-image-source: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%);
+    border-image-slice: 1;
+    padding-left: 80.5px;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 353px;
+    height: 134px;
+  }
+  .content_wrapper {
+    position: relative;
+    top: 215px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0 40px;
+  }
+}

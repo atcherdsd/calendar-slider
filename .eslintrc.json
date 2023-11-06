@@ -1,9 +1,10 @@
 {
-	"plugins": ["prettier", "import", "@typescript-eslint", "react"],
+	"plugins": ["prettier", "import", "@typescript-eslint", "react", "react-hooks"],
 	"extends": [
 			"plugin:prettier/recommended",
 			"prettier",
 			"eslint:recommended",
+      "plugin:react-hooks/recommended",
 			"plugin:@typescript-eslint/recommended"
 	],
 	"root": true,
@@ -18,6 +19,8 @@
 			"node": true
 	},
 	"rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
 			"no-debugger": "off",
 			"no-console": 0,
 			"class-methods-use-this": "off",

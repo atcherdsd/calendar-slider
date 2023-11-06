@@ -14,7 +14,7 @@ module.exports = {
     assetModuleFilename: 'assets/[hash][ext][query]',
   },
   resolve: {
-    extensions: ['.tsx', '.ts', 'jsx', '.js'],
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
   mode: 'development',
   devServer: {
@@ -82,7 +82,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', ['@babel/preset-react', {'runtime': 'automatic'}]],
+            presets: [
+              '@babel/preset-env', 
+              ['@babel/preset-react', {'runtime': 'classic'}],
+              '@babel/preset-typescript'
+            ],
           },
         },
       },

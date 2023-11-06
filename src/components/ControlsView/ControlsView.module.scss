@@ -1,0 +1,81 @@
+@import '../commonStyles/commonStyles.scss';
+
+@mixin button-hover_span {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+  border: 1px solid #929aa9;
+  border-radius: 50%;
+  padding-top: 25%;
+  transition: all 0.3s;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 570px;
+}
+.top_block {
+  position: relative;
+  top: 0;
+  width: 530px;
+  height: 530px;
+  margin: 0 auto;
+  border: 1px solid #d0d5e0;
+  border-radius: 50%;
+  transition: 1s;
+}
+.side_block {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 120px;
+  height: 88px;
+}
+.number_button {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  z-index: 1;
+  color: $primary-color;
+  &:hover {
+    transition: all 0.3s;
+    background-color: $body-bg-color;
+  }
+  &:not(:hover) span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    font-size: 5px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    transition: all 0.3s;
+  }
+  &:hover span {
+    @include button-hover_span;
+  }
+  &:not(:hover) span.active_span {
+    @include button-hover_span;
+    background-color: $body-bg-color;
+  }
+  .button_capture {
+    position: absolute;
+    left: 76px;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .active_capture {
+    opacity: 1;
+  }
+}
+
+.active {
+  background-color: $body-bg-color;
+}

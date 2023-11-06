@@ -26,10 +26,10 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": false,
     "resolveJsonModule": true,
-    "jsx": "preserve"
+    "jsx": "react"
   },
   "include": ["src/**/*"],
-  "exclude": ["dist"],
+  "exclude": ["./dist"],
 	"ts-node": {
     "esm": true,
 		"experimentalSpecifierResolution": "node",
