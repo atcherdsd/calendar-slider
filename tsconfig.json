@@ -32,6 +32,6 @@
   "exclude": ["./dist"],
 	"ts-node": {
     "esm": true,
-		"experimentalSpecifierResolution": "node",
+		"experimentalSpecifierResolution": "node"
   }
 }

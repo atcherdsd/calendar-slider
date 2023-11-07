@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans:wght@400;700&display=swap');
+@import '../commonStyles/commonStyles.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-height: 135px;
+  gap: 80px;
+  padding-top: 56px;
+  position: relative;
+  z-index: 5;
+  .year_back,
+  .year_forward {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffffff;
+  }
+  .content_block_wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    max-width: 1120px;
+  }
+}
+.year_arrow_back,
+.year_arrow_forward {
+  height: 10px;
+  display: block;
+  margin: 0 auto;
+}
+.year_arrow_back {
+  transform: rotate(180deg);
+}
+.content_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 320px;
+}
+.event_year {
+  color: #3877EE;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+.event_content {
+  color: $primary-color;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}

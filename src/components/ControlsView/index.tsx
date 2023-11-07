@@ -1,18 +1,29 @@
-import React, { MouseEvent, ReactNode, useEffect } from 'react';
+import React, { MouseEvent, ReactNode, useEffect, useState } from 'react';
 import cl from './ControlsView.module.scss';
 import { arrangementArgs, titles } from '../common/utils';
 import { applyActiveClass, arrangeElements, turnCircle } from '../common/helpers';
+import { SetPeriod } from 'src/types/types';
+import { useSetState } from '../common/hooks';
+import ArrowBack from './Arrows/ArrowBack';
+import ArrowForward from './Arrows/ArrowForward';
 
-const ControlsView = (): JSX.Element => {
+const ControlsView = ({ setPeriod, period }: SetPeriod): JSX.Element => {
+  const [isStart, setIsStart] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+  const writtenPeriod = useSetState(1);
+
   const handleMouseEnter = (event: MouseEvent) => {
     const target = event.target as HTMLDivElement;
     console.log('target: ', target);
   };
 
-  const handleClick = (event: MouseEvent) => {
+  const handleCircleClick = (event: MouseEvent) => {
     const child = event.currentTarget as HTMLButtonElement;
     const parent = child.closest('div') as HTMLDivElement;
     const currentSpan = child.querySelector('span') as HTMLSpanElement;
+    const numberFromSpan = +currentSpan.innerText;
+
+    setPeriod(numberFromSpan);
     const currentCapture = child.querySelector('div') as HTMLDivElement;
 
     const buttons = document.querySelectorAll(
@@ -30,6 +41,37 @@ const ControlsView = (): JSX.Element => {
     turnCircle(child, parent, buttons);
   };
 
+  const handleArrowClick = (event: MouseEvent) => {
+    const target = event.target as HTMLButtonElement | HTMLImageElement;
+    const currentPeriod = period;
+    writtenPeriod.setValue(currentPeriod);
+    const getPeriod = writtenPeriod.getValue();
+
+    if (
+      target.classList.contains(`${cl.period_control_back}`) ||
+      target.classList.contains(`${cl.period_arrow_back}`)
+    ) {
+      setIsEnd(false);
+      if (getPeriod > 1) {
+        setPeriod(currentPeriod - 1);
+        writtenPeriod.setValue(currentPeriod - 1);
+      } else {
+        setIsStart(true);
+      }
+    } else if (
+      target.classList.contains(`${cl.period_control_forward}`) ||
+      target.classList.contains(`${cl.period_arrow_forward}`)
+    ) {
+      setIsStart(false);
+      if (getPeriod < arrangementArgs.buttonsAmount) {
+        setPeriod(currentPeriod + 1);
+        writtenPeriod.setValue(currentPeriod + 1);
+      } else {
+        setIsEnd(true);
+      }
+    }
+  };
+
   useEffect(() => {
     const numberBtns = document.querySelectorAll(
       `.${cl.number_button}`
@@ -42,7 +84,10 @@ const ControlsView = (): JSX.Element => {
     numberBtns[0].classList.add(`${cl.active}`);
     firstSpan.classList.add(`${cl.active_span}`);
     firstDiv.classList.add(`${cl.active_capture}`);
-  });
+
+    writtenPeriod.getValue() === 1 ? setIsStart(true) : null;
+    writtenPeriod.getValue() === 6 ? setIsEnd(true) : null;
+  }, [writtenPeriod]);
 
   return (
     <>
@@ -55,7 +100,7 @@ const ControlsView = (): JSX.Element => {
                 (elem = (
                   <button
                     className={cl.number_button}
-                    onClick={handleClick}
+                    onClick={handleCircleClick}
                     onMouseEnter={handleMouseEnter}
                     key={index}
                   >
@@ -65,7 +110,26 @@ const ControlsView = (): JSX.Element => {
                 ))
             )}
         </div>
-        <div className={cl.side_block}></div>
+        <div className={cl.side_block}>
+          <div className={cl.counter_wrapper}>
+            <span className={cl.current_period}>0{period}</span>/
+            <span className={cl.periods_amount}>0{arrangementArgs.buttonsAmount}</span>
+          </div>
+          <div className={cl.periods_controls} onClick={handleArrowClick}>
+            <button
+              className={`${cl.period_control_back} ${isStart ? cl.period_inactive : ''}`}
+              disabled={isStart}
+            >
+              <ArrowBack isStart={isStart} />
+            </button>
+            <button
+              className={`${cl.period_control_forward} ${isEnd ? cl.period_inactive : ''}`}
+              disabled={isEnd}
+            >
+              <ArrowForward isEnd={isEnd} />
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -48,7 +48,7 @@ $main-font-family: "PT Sans", sans-serif;
     top: 170px;
     border: none;
     border-left: 5px solid;
-    border-image-source: linear-gradient(180deg, #3877EE -5%, #EF5DA8 85%);
+    border-image-source: linear-gradient(180deg, #3877EE -5%, $last-year-color 85%);
     border-image-slice: 1;
     padding-left: 80.5px;
     font-size: 56px;

@@ -1,4 +1,6 @@
 @import '../commonStyles/commonStyles.scss';
+$period-control-border-color-active: #9ba5ba;
+$period-control-border-color-inactive: #c7cdd9;
 
 @mixin button-hover_span {
   width: 56px;
@@ -7,6 +9,7 @@
   border: 1px solid #929aa9;
   border-radius: 50%;
   padding-top: 25%;
+  background-color: $body-bg-color;
   transition: all 0.3s;
 }
 
@@ -24,13 +27,7 @@
   border: 1px solid #d0d5e0;
   border-radius: 50%;
   transition: 1s;
-}
-.side_block {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 120px;
-  height: 88px;
+  z-index: 5;
 }
 .number_button {
   width: 56px;
@@ -44,10 +41,6 @@
   background: transparent;
   z-index: 1;
   color: $primary-color;
-  &:hover {
-    transition: all 0.3s;
-    background-color: $body-bg-color;
-  }
   &:not(:hover) span {
     display: block;
     width: 6px;
@@ -69,13 +62,47 @@
     left: 76px;
     font-size: 20px;
     opacity: 0;
+    visibility: hidden;
     transition: all 0.3s;
   }
   .active_capture {
     opacity: 1;
+    visibility: visible;
   }
 }
-
 .active {
   background-color: $body-bg-color;
+}
+
+.side_block {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 120px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 40px;
+}
+.counter_wrapper {
+  width: 36px;
+  height: 18px;
+  font-size: 14px;
+}
+.periods_controls {
+  display: flex;
+  justify-content: space-between;
+}
+.period_control_back,
+.period_control_forward {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid $period-control-border-color-active;
+  background-color: inherit;
+  &.period_inactive {
+    border: 1px solid $period-control-border-color-inactive;
+    cursor: auto;
+  }
 }
