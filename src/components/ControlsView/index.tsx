@@ -84,7 +84,8 @@ const ControlsView = ({ setPeriod, period }: SetPeriod): JSX.Element => {
     numberBtns[0].classList.add(`${cl.active}`);
     firstSpan.classList.add(`${cl.active_span}`);
     firstDiv.classList.add(`${cl.active_capture}`);
-
+  }, []);
+  useEffect(() => {
     writtenPeriod.getValue() === 1 ? setIsStart(true) : null;
     writtenPeriod.getValue() === 6 ? setIsEnd(true) : null;
   }, [writtenPeriod]);
