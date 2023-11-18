@@ -1,0 +1,12 @@
+.period_arrow_back,
+.period_arrow_forward {
+  height: 14.5px;
+  width: 13.25px;
+  display: block;
+  margin: 0 auto;
+  pointer-events: none;
+  @media (max-width: 1000px) {
+    height: 12.5px;
+    width: 6.25px;
+  }
+}

@@ -1,0 +1,146 @@
+@import '../commonStyles/commonStyles.scss';
+$period-control-border-color-active: #9ba5ba;
+$span-hover-border-color: #929aa9;
+
+@mixin button-hover_span {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+  border: 1px solid $span-hover-border-color;
+  border-radius: 50%;
+  padding-top: 25%;
+  background-color: $body-bg-color;
+  transition: all 0.3s;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 570px;
+  display: grid;
+  @media (max-width: 1000px) {
+    order: 1;
+    height: 127.7px;
+    position: fixed;
+    top: 430px;
+  }
+}
+.circle_border {
+  position: absolute;
+  width: 530px;
+  height: 530px;
+  border: 1px solid $primary-color;
+  border-radius: 50%;
+  opacity: 0.2;
+  justify-self: center;
+  z-index: 5;
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}
+.top_block {
+  position: relative;
+  top: 0;
+  width: 530px;
+  height: 530px;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: 1s;
+  z-index: 5;
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}
+.number_button {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  z-index: 1;
+  color: $primary-color;
+  &:not(:hover) span {
+    display: block;
+    width: 6px;
+    height: 6px;
+    font-size: 5px;
+    border-radius: 50%;
+    background-color: $primary-color;
+    transition: all 0.3s;
+  }
+  &:hover span {
+    @include button-hover_span;
+  }
+  &:not(:hover) span.active_span {
+    @include button-hover_span;
+    background-color: $body-bg-color;
+  }
+  .button_capture {
+    position: absolute;
+    left: 76px;
+    font-size: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+  .active_capture {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.active {
+  background-color: $body-bg-color;
+}
+
+.side_block {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 120px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 40px;
+  @media (max-width: 1000px) {
+    width: 58.33px;
+    height: 49.67px;
+    margin-left: 0;
+  }
+}
+.counter_wrapper {
+  width: 36px;
+  height: 18px;
+  font-size: 14px;
+}
+.periods_controls {
+  display: flex;
+  justify-content: space-between;
+}
+.period_control_back,
+.period_control_forward {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid $period-control-border-color-active;
+  background-color: inherit;
+  @media (max-width: 1000px) {
+    width: 25px;
+    height: 25px;
+  }
+  &:hover {
+    background-color: $btn-bg-color;
+    transition: 0.3s;
+  }
+  &.period_inactive {
+    border: 1px solid $mobile-line-color;
+    cursor: auto;
+    &:hover {
+      background-color: inherit;
+    }  
+  }
+}

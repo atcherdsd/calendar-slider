@@ -1,0 +1,8 @@
+@import '../commonStyles/commonStyles.scss';
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+	position: relative;
+	background-color: $body-bg-color;
+}

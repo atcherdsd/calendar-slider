@@ -1,0 +1,42 @@
+@import "../commonStyles/commonStyles.scss";
+
+$desktop-first-year-color: #5d5fef;
+$mobile-last-year-color: #F178B6;
+
+.container {
+  position: absolute;
+  top: 185px;
+  left: 217px;
+  max-width: 968px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 200px;
+  font-weight: 700;
+  letter-spacing: -4px;
+  line-height: 135px;
+  align-self: center;
+  @media (max-width: 1440px) {
+    left: auto;
+  }
+  @media (max-width: 1000px) {
+    font-size: 56px;
+    letter-spacing: -1.12px;
+    line-height: normal;
+    justify-content: space-evenly;
+    top: -55px;
+    left: -5px;
+  }
+  .first_year {
+    color: $desktop-first-year-color;
+    @media (max-width: 1000px) {
+      color: $mobile-first-year-color;
+    }
+  }
+  .last_year {
+    color: $desktop-last-year-color;
+    @media (max-width: 1000px) {
+      color: $mobile-last-year-color;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+@import '../commonStyles/commonStyles.scss';
+
+$line-bg-color: #e2e5ec;
+$section-border: 1px solid $line-bg-color;
+$main-font-family: "PT Sans", sans-serif;
+
+@mixin around {
+  content: "";
+  position: absolute;
+  background-color: $line-bg-color;
+}
+.container {
+  position: relative;
+  margin: 0 160px 0 320px;
+	top: 50%;
+  max-width: 1440px;
+  width: 100%;
+	min-height: 1080px;
+  height: 100%;
+	font-family: $main-font-family;
+  font-weight: 400;
+  font-size: 20px;
+  border-left: $section-border;
+  border-right: $section-border;
+  color: $primary-color;
+  @media (max-width: 1770px) {
+    margin: 0 auto;
+  }
+  @media (max-width: 1000px) {
+    min-height: auto;
+    margin: 0 auto;
+  }
+  &::before {
+    @include around;
+    top: 480px;
+    min-width: 100%;
+    height: 2px;
+    @media (max-width: 1000px) {
+      top: 293px;
+      min-width: calc(100% - 40px);
+      left: 20px;
+      color: $mobile-line-color;
+    }
+  }
+  &::after {
+    @include around;
+    top: 0px;
+    width: 2px;
+    left: 50%;
+    height: 100%;
+    @media (max-width: 1000px) {
+      left: 0;
+      width: 0;
+    }
+  }
+  .title_border {
+    height: 120px;
+    width: 5px;
+    border-left: 5px solid;
+    border-image-source: linear-gradient(180deg, $mobile-first-year-color -5%, $desktop-last-year-color 85%);
+    border-image-slice: 1;
+    position: absolute;
+    top: 177px;
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+  .section_title {
+    position: absolute;
+    top: 170px;
+    padding-left: 78px;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 440px;
+    @media (max-width: 1000px) {
+      font-size: 20px;
+      padding-left: 20px;
+      max-width: 143px;
+      top: 59px;
+    }
+  }
+  .content_wrapper {
+    position: relative;
+    top: 215px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0 40px;
+    @media (max-width: 1000px) {
+      padding: 0 0 0 20px;
+    }
+  }
+}
