@@ -1,7 +1,7 @@
 {
   "name": "calendar-slider",
   "version": "1.0.0",
-  "description": "App with React, TS, SASS, Webpack",
+  "description": "App with React, TS, SASS, Swiper, Webpack",
   "main": "index.tsx",
   "type": "module",
   "browserslist": [
