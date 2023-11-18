@@ -1,0 +1,600 @@
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/ContentSection/ContentSection.module.scss ***!
+  \*******************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap);
+/*!***********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/SliderView/SliderView.module.scss ***!
+  \***********************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans:wght@400;700&display=swap);
+/*!*********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/App/App.module.scss ***!
+  \*********************************************************************************************************************************************************/
+.App-module__main___znTEV {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #f4f5f9;
+}
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/ContentSection/ContentSection.module.scss (1) ***!
+  \***********************************************************************************************************************************************************************************/
+.ContentSection-module__container___RjTCV {
+  position: relative;
+  margin: 0 160px 0 320px;
+  top: 50%;
+  max-width: 1440px;
+  width: 100%;
+  min-height: 1080px;
+  height: 100%;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  border-left: 1px solid #e2e5ec;
+  border-right: 1px solid #e2e5ec;
+  color: #42567a;
+}
+@media (max-width: 1770px) {
+  .ContentSection-module__container___RjTCV {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1000px) {
+  .ContentSection-module__container___RjTCV {
+    min-height: auto;
+    margin: 0 auto;
+  }
+}
+.ContentSection-module__container___RjTCV::before {
+  content: "";
+  position: absolute;
+  background-color: #e2e5ec;
+  top: 480px;
+  min-width: 100%;
+  height: 2px;
+}
+@media (max-width: 1000px) {
+  .ContentSection-module__container___RjTCV::before {
+    top: 293px;
+    min-width: calc(100% - 40px);
+    left: 20px;
+    color: #c7cdd9;
+  }
+}
+.ContentSection-module__container___RjTCV::after {
+  content: "";
+  position: absolute;
+  background-color: #e2e5ec;
+  top: 0px;
+  width: 2px;
+  left: 50%;
+  height: 100%;
+}
+@media (max-width: 1000px) {
+  .ContentSection-module__container___RjTCV::after {
+    left: 0;
+    width: 0;
+  }
+}
+.ContentSection-module__container___RjTCV .ContentSection-module__title_border___IMZ8W {
+  height: 120px;
+  width: 5px;
+  border-left: 5px solid;
+  border-image-source: linear-gradient(180deg, #3877EE -5%, #ef5da8 85%);
+  border-image-slice: 1;
+  position: absolute;
+  top: 177px;
+}
+@media (max-width: 1000px) {
+  .ContentSection-module__container___RjTCV .ContentSection-module__title_border___IMZ8W {
+    display: none;
+  }
+}
+.ContentSection-module__container___RjTCV .ContentSection-module__section_title___Uj5M2 {
+  position: absolute;
+  top: 170px;
+  padding-left: 78px;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 440px;
+}
+@media (max-width: 1000px) {
+  .ContentSection-module__container___RjTCV .ContentSection-module__section_title___Uj5M2 {
+    font-size: 20px;
+    padding-left: 20px;
+    max-width: 143px;
+    top: 59px;
+  }
+}
+.ContentSection-module__container___RjTCV .ContentSection-module__content_wrapper___jOOQ9 {
+  position: relative;
+  top: 215px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0 40px;
+}
+@media (max-width: 1000px) {
+  .ContentSection-module__container___RjTCV .ContentSection-module__content_wrapper___jOOQ9 {
+    padding: 0 0 0 20px;
+  }
+}
+/*!***************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/ControlsView/ControlsView.module.scss ***!
+  \***************************************************************************************************************************************************************************/
+.ControlsView-module__container___YN_2j {
+  position: relative;
+  width: 100%;
+  height: 570px;
+  display: grid;
+}
+@media (max-width: 1000px) {
+  .ControlsView-module__container___YN_2j {
+    order: 1;
+    height: 127.7px;
+    position: fixed;
+    top: 430px;
+  }
+}
+
+.ControlsView-module__circle_border___cdedQ {
+  position: absolute;
+  width: 530px;
+  height: 530px;
+  border: 1px solid #42567a;
+  border-radius: 50%;
+  opacity: 0.2;
+  justify-self: center;
+  z-index: 5;
+}
+@media (max-width: 1000px) {
+  .ControlsView-module__circle_border___cdedQ {
+    display: none;
+  }
+}
+
+.ControlsView-module__top_block___k4U61 {
+  position: relative;
+  top: 0;
+  width: 530px;
+  height: 530px;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: 1s;
+  z-index: 5;
+}
+@media (max-width: 1000px) {
+  .ControlsView-module__top_block___k4U61 {
+    display: none;
+  }
+}
+
+.ControlsView-module__number_button___d8T2p {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  z-index: 1;
+  color: #42567a;
+}
+.ControlsView-module__number_button___d8T2p:not(:hover) span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  font-size: 5px;
+  border-radius: 50%;
+  background-color: #42567a;
+  transition: all 0.3s;
+}
+.ControlsView-module__number_button___d8T2p:hover span {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+  border: 1px solid #929aa9;
+  border-radius: 50%;
+  padding-top: 25%;
+  background-color: #f4f5f9;
+  transition: all 0.3s;
+}
+.ControlsView-module__number_button___d8T2p:not(:hover) span.ControlsView-module__active_span___sAgzN {
+  width: 56px;
+  height: 56px;
+  font-size: 20px;
+  border: 1px solid #929aa9;
+  border-radius: 50%;
+  padding-top: 25%;
+  background-color: #f4f5f9;
+  transition: all 0.3s;
+  background-color: #f4f5f9;
+}
+.ControlsView-module__number_button___d8T2p .ControlsView-module__button_capture___DwcHb {
+  position: absolute;
+  left: 76px;
+  font-size: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.ControlsView-module__number_button___d8T2p .ControlsView-module__active_capture___OY76T {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ControlsView-module__active___LeDDr {
+  background-color: #f4f5f9;
+}
+
+.ControlsView-module__side_block___gG2BF {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 120px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 40px;
+}
+@media (max-width: 1000px) {
+  .ControlsView-module__side_block___gG2BF {
+    width: 58.33px;
+    height: 49.67px;
+    margin-left: 0;
+  }
+}
+
+.ControlsView-module__counter_wrapper___k9dVZ {
+  width: 36px;
+  height: 18px;
+  font-size: 14px;
+}
+
+.ControlsView-module__periods_controls___jk9WR {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ControlsView-module__period_control_back___m5K2D,
+.ControlsView-module__period_control_forward___H4hIW {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #9ba5ba;
+  background-color: inherit;
+}
+@media (max-width: 1000px) {
+  .ControlsView-module__period_control_back___m5K2D,
+  .ControlsView-module__period_control_forward___H4hIW {
+    width: 25px;
+    height: 25px;
+  }
+}
+.ControlsView-module__period_control_back___m5K2D:hover,
+.ControlsView-module__period_control_forward___H4hIW:hover {
+  background-color: #ffffff;
+  transition: 0.3s;
+}
+.ControlsView-module__period_control_back___m5K2D.ControlsView-module__period_inactive___Yb5uM,
+.ControlsView-module__period_control_forward___H4hIW.ControlsView-module__period_inactive___Yb5uM {
+  border: 1px solid #c7cdd9;
+  cursor: auto;
+}
+.ControlsView-module__period_control_back___m5K2D.ControlsView-module__period_inactive___Yb5uM:hover,
+.ControlsView-module__period_control_forward___H4hIW.ControlsView-module__period_inactive___Yb5uM:hover {
+  background-color: inherit;
+}
+/*!****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/ControlsView/Arrows/Arrows.module.scss ***!
+  \****************************************************************************************************************************************************************************/
+.Arrows-module__period_arrow_back___rsW_Q,
+.Arrows-module__period_arrow_forward___fIWul {
+  height: 14.5px;
+  width: 13.25px;
+  display: block;
+  margin: 0 auto;
+  pointer-events: none;
+}
+@media (max-width: 1000px) {
+  .Arrows-module__period_arrow_back___rsW_Q,
+  .Arrows-module__period_arrow_forward___fIWul {
+    height: 12.5px;
+    width: 6.25px;
+  }
+}
+/*!*********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/YearsView/YearsView.module.scss ***!
+  \*********************************************************************************************************************************************************************/
+.YearsView-module__container___wCijQ {
+  position: absolute;
+  top: 185px;
+  left: 217px;
+  max-width: 968px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 200px;
+  font-weight: 700;
+  letter-spacing: -4px;
+  line-height: 135px;
+  align-self: center;
+}
+@media (max-width: 1440px) {
+  .YearsView-module__container___wCijQ {
+    left: auto;
+  }
+}
+@media (max-width: 1000px) {
+  .YearsView-module__container___wCijQ {
+    font-size: 56px;
+    letter-spacing: -1.12px;
+    line-height: normal;
+    justify-content: space-evenly;
+    top: -55px;
+    left: -5px;
+  }
+}
+.YearsView-module__container___wCijQ .YearsView-module__first_year___TT__T {
+  color: #5d5fef;
+}
+@media (max-width: 1000px) {
+  .YearsView-module__container___wCijQ .YearsView-module__first_year___TT__T {
+    color: #3877EE;
+  }
+}
+.YearsView-module__container___wCijQ .YearsView-module__last_year___dFa72 {
+  color: #ef5da8;
+}
+@media (max-width: 1000px) {
+  .YearsView-module__container___wCijQ .YearsView-module__last_year___dFa72 {
+    color: #F178B6;
+  }
+}
+/*!***************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/components/SliderView/SliderView.module.scss (1) ***!
+  \***************************************************************************************************************************************************************************/
+.SliderView-module__container___fDMHu {
+  width: 100%;
+  padding-top: 56px;
+  position: relative;
+  z-index: 5;
+  transition: all 0.2s;
+}
+@media (max-width: 1000px) {
+  .SliderView-module__container___fDMHu {
+    padding-top: 98px;
+    order: 0;
+  }
+}
+.SliderView-module__container___fDMHu.SliderView-module__slider_animation___kpAv4 {
+  animation: SliderView-module__fade____8Ohw 0.8s ease-in-out forwards;
+  transition: all 1s;
+}
+.SliderView-module__container___fDMHu .SliderView-module__year_back___AuQDc {
+  left: -20px;
+  transform: rotate(180deg);
+}
+.SliderView-module__container___fDMHu .SliderView-module__year_forward___i3QLn {
+  right: -2px;
+}
+.SliderView-module__container___fDMHu .SliderView-module__year_back___AuQDc,
+.SliderView-module__container___fDMHu .SliderView-module__year_forward___i3QLn {
+  top: 98px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+  position: absolute;
+}
+.SliderView-module__container___fDMHu .SliderView-module__year_back___AuQDc:after,
+.SliderView-module__container___fDMHu .SliderView-module__year_forward___i3QLn:after {
+  content: url(assets/42a00e1042e62dbb933e.svg);
+}
+.SliderView-module__container___fDMHu .SliderView-module__year_back___AuQDc:disabled,
+.SliderView-module__container___fDMHu .SliderView-module__year_forward___i3QLn:disabled {
+  opacity: 0;
+  visibility: hidden;
+}
+@media (max-width: 1000px) {
+  .SliderView-module__container___fDMHu .SliderView-module__year_back___AuQDc,
+  .SliderView-module__container___fDMHu .SliderView-module__year_forward___i3QLn {
+    display: none;
+  }
+}
+.SliderView-module__container___fDMHu .SliderView-module__content_block_wrapper___xQxpH {
+  margin-right: 80px;
+  margin-left: 40px;
+}
+@media (max-width: 1000px) {
+  .SliderView-module__container___fDMHu .SliderView-module__content_block_wrapper___xQxpH {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.SliderView-module__year_arrow_back___tlpet {
+  transform: rotate(180deg);
+}
+
+.SliderView-module__event_year___sukQV {
+  color: #3877EE;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+@media (max-width: 1000px) {
+  .SliderView-module__event_year___sukQV {
+    font-size: 16px;
+  }
+}
+
+.SliderView-module__event_content___GGmPj {
+  color: #42567a;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@media (max-width: 1000px) {
+  .SliderView-module__event_content___GGmPj {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
+@keyframes SliderView-module__fade____8Ohw {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 1000px) {
+  .SliderView-module__swiper-slide___HGr76.SliderView-module__swiper-slide-next___usEMg {
+    opacity: 0.4;
+  }
+}
+.SliderView-module__swiper_pagination___gfeZ6 {
+  display: flex;
+  gap: 10px;
+  width: 86px;
+  position: absolute;
+  top: 315px;
+  left: calc(50% - 43px);
+}
+
+.SliderView-module__pagination_button___NqGS3 {
+  border: none;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background: #42567a;
+  opacity: 0.4;
+}
+.SliderView-module__pagination_button___NqGS3.SliderView-module__active___lrg1W {
+  opacity: 1;
+}
+
+.SliderView-module__slide_item___zd3Z5 {
+  width: 320px;
+}
+.SliderView-module__slide_item___zd3Z5.SliderView-module__swiper_slide_next___XToX3 {
+  width: 400px;
+}
+@media (max-width: 1000px) {
+  .SliderView-module__slide_item___zd3Z5.SliderView-module__swiper_slide_next___XToX3:not(:last-child) {
+    opacity: 0.4;
+  }
+}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/reset.scss ***!
+  \*************************************************************************************************************************************/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*# sourceMappingURL=mainb86e78c8bf3460b2130a.css.map*/
