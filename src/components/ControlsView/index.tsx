@@ -1,22 +1,21 @@
-import React, { MouseEvent, ReactNode, useEffect, useState } from 'react';
+import React, { MouseEvent, ReactNode, useEffect } from 'react';
 import cl from './ControlsView.module.scss';
 import { arrangementArgs, titles } from '../common/utils';
-import { applyActiveClass, arrangeElements, turnCircle } from '../common/helpers';
-import { SetPeriod } from 'src/types/types';
-import { useSetState } from '../common/hooks';
+import { applyActiveClass, arrangeElements, rotateCircle } from '../common/helpers';
+import { ControlsViewProps } from 'src/types/types';
 import ArrowBack from './Arrows/ArrowBack';
 import ArrowForward from './Arrows/ArrowForward';
 
-const ControlsView = ({ setPeriod, period }: SetPeriod): JSX.Element => {
-  const [isStart, setIsStart] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
-  const writtenPeriod = useSetState(1);
-
-  const handleMouseEnter = (event: MouseEvent) => {
-    const target = event.target as HTMLDivElement;
-    console.log('target: ', target);
-  };
-
+const ControlsView = ({
+  setPeriod,
+  period,
+  setIsSliderAnimation,
+  isStart,
+  setIsStart,
+  isEnd,
+  setIsEnd,
+  writtenPeriod,
+}: ControlsViewProps): JSX.Element => {
   const handleCircleClick = (event: MouseEvent) => {
     const child = event.currentTarget as HTMLButtonElement;
     const parent = child.closest('div') as HTMLDivElement;
@@ -38,32 +37,60 @@ const ControlsView = ({ setPeriod, period }: SetPeriod): JSX.Element => {
 
     applyActiveClass(child, currentSpan, currentCapture, buttons, spans, captures);
 
-    turnCircle(child, parent, buttons);
+    rotateCircle(child, parent, buttons);
+
+    setIsSliderAnimation(true);
+
+    writtenPeriod.setValue(numberFromSpan);
+    numberFromSpan === 1 ? setIsStart(true) : setIsStart(false);
+    numberFromSpan === arrangementArgs.buttonsAmount ? setIsEnd(true) : setIsEnd(false);
   };
 
   const handleArrowClick = (event: MouseEvent) => {
-    const target = event.target as HTMLButtonElement | HTMLImageElement;
+    const target = event.target as HTMLButtonElement;
     const currentPeriod = period;
     writtenPeriod.setValue(currentPeriod);
-    const getPeriod = writtenPeriod.getValue();
 
-    if (
-      target.classList.contains(`${cl.period_control_back}`) ||
-      target.classList.contains(`${cl.period_arrow_back}`)
-    ) {
+    const buttons = document.querySelectorAll(
+      `.${cl.number_button}`
+    ) as NodeListOf<HTMLButtonElement>;
+    const spans = document.querySelectorAll(
+      `.${cl.number_button} span`
+    ) as NodeListOf<HTMLSpanElement>;
+    const captures = document.querySelectorAll(
+      `.${cl.button_capture}`
+    ) as NodeListOf<HTMLDivElement>;
+    const chosenCircleButton = target.classList.contains(`${cl.period_control_back}`)
+      ? (document.querySelectorAll(`.${cl.number_button}`)[currentPeriod - 2] as HTMLButtonElement)
+      : target.classList.contains(`${cl.period_control_forward}`)
+      ? (document.querySelectorAll(`.${cl.number_button}`)[currentPeriod] as HTMLButtonElement)
+      : null;
+    const parentButtonBlock = chosenCircleButton.closest('div') as HTMLDivElement;
+    const chosenCircleSpan = chosenCircleButton.querySelector('span') as HTMLSpanElement;
+    const chosenCircleCapture = chosenCircleButton.querySelector('div') as HTMLDivElement;
+
+    rotateCircle(chosenCircleButton, parentButtonBlock, buttons);
+    applyActiveClass(
+      chosenCircleButton,
+      chosenCircleSpan,
+      chosenCircleCapture,
+      buttons,
+      spans,
+      captures
+    );
+    setIsSliderAnimation(true);
+
+    if (target.classList.contains(`${cl.period_control_back}`)) {
       setIsEnd(false);
-      if (getPeriod > 1) {
+      if (currentPeriod > 1) {
         setPeriod(currentPeriod - 1);
         writtenPeriod.setValue(currentPeriod - 1);
       } else {
         setIsStart(true);
       }
-    } else if (
-      target.classList.contains(`${cl.period_control_forward}`) ||
-      target.classList.contains(`${cl.period_arrow_forward}`)
-    ) {
+    } else if (target.classList.contains(`${cl.period_control_forward}`)) {
       setIsStart(false);
-      if (getPeriod < arrangementArgs.buttonsAmount) {
+      if (currentPeriod < arrangementArgs.buttonsAmount) {
         setPeriod(currentPeriod + 1);
         writtenPeriod.setValue(currentPeriod + 1);
       } else {
@@ -87,24 +114,20 @@ const ControlsView = ({ setPeriod, period }: SetPeriod): JSX.Element => {
   }, []);
   useEffect(() => {
     writtenPeriod.getValue() === 1 ? setIsStart(true) : null;
-    writtenPeriod.getValue() === 6 ? setIsEnd(true) : null;
-  }, [writtenPeriod]);
+    writtenPeriod.getValue() === arrangementArgs.buttonsAmount ? setIsEnd(true) : null;
+  }, [setIsEnd, setIsStart, writtenPeriod]);
 
   return (
     <>
       <div className={cl.container}>
+        <div className={cl.circle_border}></div>
         <div className={cl.top_block}>
           {Array(arrangementArgs.buttonsAmount)
             .fill(1)
             .map(
               (elem: ReactNode, index: number): JSX.Element =>
                 (elem = (
-                  <button
-                    className={cl.number_button}
-                    onClick={handleCircleClick}
-                    onMouseEnter={handleMouseEnter}
-                    key={index}
-                  >
+                  <button className={cl.number_button} onClick={handleCircleClick} key={index}>
                     <span>{index + 1}</span>
                     <div className={cl.button_capture}>{titles[index]}</div>
                   </button>

@@ -3,13 +3,35 @@ export type Collection =
   | NodeListOf<HTMLDivElement>
   | NodeListOf<HTMLSpanElement>;
 
-export type SetPeriod = {
+interface IWrittenPeriod {
+  value: number;
+  setValue: React.Dispatch<React.SetStateAction<number>>;
+  getValue: () => number;
+}
+
+export type ControlsViewProps = {
   setPeriod: (data: number) => void;
   period: number;
+  setIsSliderAnimation: (data: boolean) => void;
+  isStart: boolean;
+  setIsStart: (data: boolean) => void;
+  isEnd: boolean;
+  setIsEnd: (data: boolean) => void;
+  writtenPeriod: IWrittenPeriod;
 };
 
-export type PeriodNumber = {
+export type YearsViewProps = {
   periodNumber: number;
+};
+
+export type SliderViewProps = {
+  periodNumber: number;
+  setPeriod: (data: number) => void;
+  isSliderAnimation: boolean;
+  setIsSliderAnimation: (data: boolean) => void;
+  setIsStart: (data: boolean) => void;
+  setIsEnd: (data: boolean) => void;
+  writtenPeriod: IWrittenPeriod;
 };
 
 export type IsArrowProps = {

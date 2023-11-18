@@ -1,5 +1,6 @@
 import { Collection } from 'src/types/types';
 import cl from '../ControlsView/ControlsView.module.scss';
+import { scrollYearsDelay } from './utils';
 
 export const arrangeElements = (
   orbitRadius: number,
@@ -38,14 +39,14 @@ export const applyActiveClass = (
     .forEach(capture => capture.classList.remove(`${cl.active_capture}`));
 };
 
-export const turnCircle = (
+export const rotateCircle = (
   button: HTMLButtonElement,
   block: HTMLDivElement,
   buttonsCollection: NodeListOf<HTMLButtonElement>
 ) => {
   let currentAngle = 0;
-  const left = parseInt(window.getComputedStyle(button).left.slice(0, -2));
-  switch (left) {
+  const cssLeft = parseInt(window.getComputedStyle(button).left.slice(0, -2));
+  switch (cssLeft) {
     case 105: {
       currentAngle = 60;
       break;
@@ -85,4 +86,25 @@ export const turnCircle = (
       btn.style.transform = `rotate(${Math.abs(currentAngle)}deg)`;
       btn.style.transition = 'transform 1s';
     });
+};
+
+export const scrollYearNumbers = (
+  yearFromRef: number,
+  yearFromState: number,
+  el: string,
+  step: number
+) => {
+  if (yearFromRef === null) return;
+
+  const diff = yearFromState - yearFromRef;
+  const delay = diff !== 0 ? Math.abs(Math.round(scrollYearsDelay / (diff / step))) : 1;
+
+  const interval = setInterval(() => {
+    if (yearFromRef !== yearFromState) {
+      yearFromRef = diff > 0 ? yearFromRef + step : yearFromRef - step;
+      document.querySelector(el).innerHTML = String(yearFromRef);
+    } else {
+      clearInterval(interval);
+    }
+  }, delay);
 };

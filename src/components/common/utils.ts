@@ -1,5 +1,8 @@
 export const pageTitle = 'Исторические даты';
 export const titles = ['Технологии', 'Кино', 'Литература', 'Театр', 'Спорт', 'Наука'];
+export const stepForYearScrolling = 1;
+export const scrollYearsDelay = 500;
+export const mobileScreenSize = 1000;
 
 export const arrangementArgs = {
   buttonsAmount: 6,

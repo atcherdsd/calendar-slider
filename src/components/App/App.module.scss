@@ -5,13 +5,4 @@
   min-height: 100vh;
 	position: relative;
 	background-color: $body-bg-color;
-	@media (max-width: 768px) {
-		min-height: 48rem;
-	}
-	@media (max-width: 490px) {
-		min-height: 53rem;
-	}
-	@media (max-width: 370px) {
-		min-height: 55rem;
-	}
 }
